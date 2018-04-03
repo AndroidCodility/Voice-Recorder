@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.codility.voicerecorder.MainActivity">
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/tvHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="@string/applicant_name"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="40sp" />
+
+    <android.support.v7.widget.AppCompatImageButton
+        android:id="@+id/imgBtRecordList"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_above="@+id/ll"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/ic_playlist_play" />
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@+id/tvHeader"
+        android:background="@color/colorPrimary" />
+
+    <LinearLayout
+        android:id="@+id/llRecorder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/ll"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <Chronometer
+            android:id="@+id/chronometer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="100sp" />
+
+        <android.support.v7.widget.LinearLayoutCompat
+            android:id="@+id/llPlay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingEnd="10dp"
+            android:paddingStart="10dp"
+            android:visibility="gone">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/imgViewPlay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/ic_play_circle" />
+
+            <android.support.v7.widget.AppCompatSeekBar
+                android:id="@+id/seekBar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1" />
+
+        </android.support.v7.widget.LinearLayoutCompat>
+
+        <android.support.v7.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <android.support.v7.widget.AppCompatImageButton
+                android:id="@+id/imgBtRecord"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:padding="10dp"
+                android:src="@drawable/ic_mike" />
+
+            <android.support.v7.widget.AppCompatImageButton
+                android:id="@+id/imgBtStop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:padding="15dp"
+                android:src="@drawable/ic_player_stop"
+                android:visibility="gone" />
+
+        </android.support.v7.widget.LinearLayoutCompat>
+
+    </LinearLayout>
+</RelativeLayout>
